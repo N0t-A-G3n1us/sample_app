@@ -18,18 +18,21 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   	
   	#test for the presence of a particular HTML tag 
    # assert_select "title", "#{@base_title}"  end
+  	 assert_select "title", "Home | Ruby on Rails Tutorial Sample App"
   end
   
   test "should get help" do
     get static_pages_help_url
     assert_response :success
   #	assert_select "title", "#{@base_title}"
+    assert_select "title", "Help | Ruby on Rails Tutorial Sample App"
   end
 
   test "should get about" do
     get static_pages_about_url
     assert_response :success
   	#assert_select "title", "#{@base_title}"
+  	assert_select "title", "About | Ruby on Rails Tutorial Sample App"
   end
 
   test "should get contact" do
